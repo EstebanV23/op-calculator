@@ -1,0 +1,8 @@
+.content-buttons {
+  display: flex;
+  gap: 6px;
+  padding: 6px 0;
+  border-bottom: 1.3px solid rgba(0, 0, 0, 0.288);
+  width: 100%;
+  flex-wrap: wrap;
+}

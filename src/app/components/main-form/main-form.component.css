@@ -1,0 +1,127 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: stretch;
+  padding: 18px;
+  background-color: white;
+  border-radius: 16px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.input {
+  padding: 11px 14px;
+  border: 2px solid #2d2d2d1d;
+  background-color: #ffffff;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.content-input {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 5px;
+}
+
+.title-input {
+  color: #2d2d2d9a;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.input:focus {
+  box-shadow: none;
+  outline: none;
+  border-color: #2a93d59d;
+}
+
+.input:focus + .title-input {
+  color: #2a93d5;
+  width: 100%;
+}
+
+.select-input {
+  padding: 11px 14px;
+  border: 2px solid #2d2d2d1d;
+  background-color: #ffffff;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  width: min-content;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.select-input::-ms-expand {
+  display: none;
+}
+
+.section-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+
+}
+
+.select-input:focus {
+  box-shadow: none;
+  outline: none;
+  border-color: #2a93d59d;
+}
+
+.content-selected {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 5px;
+  align-items: center;
+}
+
+.title-selected {
+  color: #2d2d2d9a;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.select-input:focus + .title-selected {
+  color: #2a93d5;
+}
+
+.input-error .input {
+  border-color: #ff000034;
+  background-color: #ff2f2f1f;
+  color: #c40a0a;
+}
+
+.input-error .title-input {
+  color: #c40a0aab;
+}
+
+.error-text {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #ff00006e;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+  font-weight: 700;
+}
+
+.error-text span {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ff00006e;
+}
+
+.result {
+  word-break: break-all;
+}

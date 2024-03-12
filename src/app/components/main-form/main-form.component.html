@@ -1,0 +1,56 @@
+<form class="form" [formGroup]="myForm" (ngSubmit)="getResult()">
+  <h3 class="form-title">{{defaultText}}</h3>
+  <div [class]="'content-input ' + (inputA.invalid && !inputA.pristine && 'input-error')">
+    <ng-container *ngIf="inputA.invalid && !inputA.pristine">
+      <span class="error-text"><span class="material-symbols-outlined">error</span> No puedes dejar este campo vacío </span>
+    </ng-container>
+      <section class="section-input">
+        <input type="text" formControlName="inputA" id="2" class="input" autocomplete="off">
+        <ng-container *ngIf="!onlyInput && !selectedOption.inputNumberB">
+          <app-main-button
+            [click]="swapInputs"
+            [icon]="'swap_vertical_circle'"
+            [blue]="true"
+          />
+        </ng-container>
+      </section>
+      <label class="title-input" for="2">{{defaultText + ' a'}}</label>
+    </div>
+  <aside class="content-selected">
+    <select class="select-input" name="" id="selectedOption" (change)="selectOption($event)">
+      <option *ngFor="let option of options" [value]="option.description" data-title={{option.description}}>
+        {{option.symbol}}
+      </option>
+    </select>
+    <label class="title-selected" for="selectedOption">{{selectedOption.description}}</label>
+  </aside>
+  <ng-container *ngIf="!onlyInput">
+    <div class="content-input">
+        <section class="section-input">
+          <input type="text" formControlName="inputB" [type]="selectedOption.inputNumberB ? 'number' : 'text'" id="1" class="input" autocomplete="off">
+          <ng-container *ngIf="!selectedOption.inputNumberB">
+            <app-main-button
+              [click]="swapInputs"
+              [icon]="'swap_vertical_circle'"
+              [blue]="true"
+            />
+          </ng-container>
+        </section>
+        <label class="title-input" for="1">{{selectedOption.inputNumberB ? 'Potencia' : defaultText + ' b'}}</label>
+      </div>
+  </ng-container>
+  <app-main-button
+    [text]="'Calcular'"
+    [icon]="'calculate'"
+    [blue]="true"
+    [disabled]="myForm.invalid"
+    [type]="myForm.invalid ? 'button' : 'submit'"
+  >
+  </app-main-button>
+  <ng-container *ngIf="result != null || result != undefined">
+    <div class="content-input">
+      <p class="result">{{brackets ? '{' : ''}}{{ result }}{{brackets ? '}' : ''}}</p>
+      <label class="title-input" for="3">Resultado</label>
+    </div>
+  </ng-container>
+</form>

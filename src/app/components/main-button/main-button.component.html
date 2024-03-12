@@ -1,0 +1,6 @@
+<button [class]="'button ' + (blue && 'blue')" routerLinkActive="button-select" (click)="click()" [type]="type || 'button'" [disabled]="disabled">
+  <span class="material-symbols-outlined">
+    {{ icon }}
+  </span>
+  {{ text }}
+</button>

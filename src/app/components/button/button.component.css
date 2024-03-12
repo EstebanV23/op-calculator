@@ -1,0 +1,35 @@
+.button {
+  --button-color-border: #2d2d2d68;
+  --button-bg-color: #00000023;
+  --button-color: #2d2d2d;
+}
+
+.button {
+  padding: 7px 15px;
+  border-radius: 4px;
+  background: none;
+  font-weight: 400;
+  display: block;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid transparent;
+  text-align: center;
+  color: var(--button-color);
+}
+
+.button:hover {
+  border-color: var(--button-color-border);
+}
+
+.button-select {
+  background-color: var(--button-bg-color);
+}
+
+.button.blue {
+  --button-color: #2a93d5;
+  --button-color-border: #2a93d56b;
+  --button-bg-color: #2a93d523;
+}
+
+
